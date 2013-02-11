@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# Include omap4 common makefile
-$(call inherit-product, device/samsung/omap4-common/common.mk)
-
 DEVICE_PACKAGE_OVERLAYS += device/samsung/espresso-common/overlay/aosp-common
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
@@ -57,7 +54,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/keylayout/espresso-gpio-keypad.kl:system/usr/keylayout/espresso-gpio-keypad.kl \
     $(LOCAL_PATH)/usr/keylayout/sec_keyboard.kl:system/usr/keylayout/sec_keyboard.kl
 
-# Packages
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    static_busybox \
+    make_ext4fs \
+    setup_fs
+
+# Omap4 Packages
 PRODUCT_PACKAGES += \
     audio.primary.piranha \
     audio.r_submix.default \
@@ -67,9 +70,34 @@ PRODUCT_PACKAGES += \
     libinvensense_mpl \
     power.piranha
 
+PRODUCT_PACKAGES += \
+	libedid \
+	libion_ti \
+    libstagefrighthw \
+    smc_pa_ctrl \
+    tf_daemon
+
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.usb.default \
+    libtinyalsa \
+    libaudioutils \
+    libnetcmdiface \
+    tinyplay \
+    tinycap \
+    tinymix
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    com.ti.omap_enhancement=true \
+    omap.enhancement=true \
+
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=true
+
+# Set default USB interface
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -116,5 +144,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Include non-opensource parts if available
+$(call inherit-product-if-exists, vendor/samsung/omap4-common/common-vendor.mk)
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
