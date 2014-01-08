@@ -87,12 +87,6 @@ PRODUCT_PACKAGES += \
     tinycap \
     tinymix
 
-# Support for Browser's saved page feature. This allows
-# for pages saved on previous versions of the OS to be
-# viewed on the current OS.
-PRODUCT_PACKAGES += \
-    libskia_legacy
-
 PRODUCT_PROPERTY_OVERRIDES += \
     com.ti.omap_enhancement=true \
     omap.enhancement=true \
