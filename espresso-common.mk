@@ -71,8 +71,8 @@ PRODUCT_PACKAGES += \
     power.piranha
 
 PRODUCT_PACKAGES += \
-	libedid \
-	libion_ti \
+    libedid \
+    libion_ti \
     libstagefrighthw \
     smc_pa_ctrl \
     tf_daemon
