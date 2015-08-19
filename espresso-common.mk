@@ -84,7 +84,8 @@ PRODUCT_PACKAGES += \
     power.piranha \
     sensors.piranha \
     geomagneticd \
-    orientationd
+    orientationd \
+    libsecril-client
 
 # Charger
 PRODUCT_PACKAGES += \
