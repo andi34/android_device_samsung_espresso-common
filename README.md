@@ -1,4 +1,4 @@
-Common Device configuration for Samsung Galaxy Tab 2 Family
+Common TWRP configuration for Samsung Galaxy Tab 2 Family
 =====================================
 (GT-P3100, GT-P3110, GT-P3113, GT-P5100, GT-P5110, GT-P5113) 
 =====================================
