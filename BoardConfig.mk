@@ -62,6 +62,7 @@ BOARD_USES_SECURE_SERVICES := true
 
 # Selinux
 BOARD_SEPOLICY_DIRS += $(ESPRESSO_FOLDER)/sepolicy
+BOARD_SEPOLICY_DIRS += hardware/ti/omap4/sepolicy
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
