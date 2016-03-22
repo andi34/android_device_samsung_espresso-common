@@ -18,7 +18,7 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
-ESPRESSO_FOLDER := device/samsung/espresso
+ESPRESSO_FOLDER := device/samsung/espressocommon
 
 TARGET_NO_BOOTLOADER := true
 

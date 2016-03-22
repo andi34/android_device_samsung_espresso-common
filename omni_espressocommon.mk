@@ -23,13 +23,16 @@ $(call inherit-product, vendor/omni/config/common_tablet.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/espresso/device.mk)
+$(call inherit-product, device/samsung/espressocommon/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_espresso
-PRODUCT_DEVICE := espresso
+PRODUCT_NAME := omni_espressocommon
+PRODUCT_DEVICE := espressocommon
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Galaxy Tab 2
 PRODUCT_MANUFACTURER := Samsung
- 
-TARGET_OTA_ASSERT_DEVICE := espresso,p3100,GT-P3100,espressorf,espressorfxx,p3110,GT-P3110,p3113,GT-P3113,espressowifi,espressowifixx,p5100,GT-P5100,espresso10rf,espresso10rfxx,p5110,GT-P5110,p5113,GT-P5113,espresso10wifi,espresso10wifixx
+
+TARGET_OTA_ASSERT_DEVICE := espresso-common,p3100,GT-P3100,espressorf,espressorfxx,p3110,GT-P3110,p3113,GT-P3113,espressowifi,espressowifixx,p5100,GT-P5100,espresso10rf,espresso10rfxx,p5110,GT-P5110,p5113,GT-P5113,espresso10wifi,espresso10wifixx
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="espresso-common"
