@@ -55,6 +55,7 @@ PRODUCT_PACKAGES += \
     ansi_cprng.ko \
     cifs.ko \
     dhd.ko \
+    pvrsrvkm_sgx540_120.ko \
     scsi_wait_scan.ko \
     sec_dock_keyboard.ko
 
