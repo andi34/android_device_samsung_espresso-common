@@ -117,8 +117,6 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 TARGET_RECOVERY_FSTAB := device/samsung/espresso-common/rootdir/etc/fstab.tab2
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_DEVICE_DIRS += device/samsung/espresso-common
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/espresso-common/custombootimg.mk
-TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 
 # TWRP
 ifneq ($(filter p3100 p3110,$(TARGET_DEVICE)),)
