@@ -34,9 +34,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery Ramdisk
 PRODUCT_PACKAGES += \
-    init.recovery.espresso.rc \
-    init.recovery.usb.rc \
-    twrp.fstab
+    init.recovery.espresso.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.espresso.variant.sh:system/bin/init.espresso.variant.sh
