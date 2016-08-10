@@ -38,9 +38,3 @@ TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 255
 TW_NO_CPU_TEMP := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-
-# RIL
-BOARD_VENDOR := samsung
-BOARD_PROVIDES_LIBRIL := true
-BOARD_MODEM_TYPE := xmm6260
-BOARD_RIL_CLASS := ../../../device/samsung/espresso-common/ril
