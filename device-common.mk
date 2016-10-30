@@ -22,6 +22,9 @@ TARGET_BOARD_OMAP_CPU := 4430
 # Include common omap4 makefile
 $(call inherit-product, hardware/ti/omap4/omap4.mk)
 
+# Include Slim specific additions
+$(call inherit-product, device/samsung/espressowifi/device-slim.mk)
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay/aosp-common
 
@@ -39,15 +42,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.espresso:root/fstab.espresso
 
-# Recovery Ramdisk
-PRODUCT_PACKAGES += \
-    $(LOCAL_PATH)/recovery/root/init.recovery.espresso.rc:recovery/root/init.recovery.espresso.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc \
-    $(LOCAL_PATH)/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.espresso.variant.sh:system/bin/init.espresso.variant.sh
-
 # GPS
 # gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
@@ -55,7 +49,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml
 
-# Wifi
+# Wi-Fi
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
@@ -88,10 +82,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/usr/keylayout/espresso-gpio-keypad.kl:system/usr/keylayout/espresso-gpio-keypad.kl \
     $(LOCAL_PATH)/usr/keylayout/sec_keyboard.kl:system/usr/keylayout/sec_keyboard.kl
 
-# init.d script to load the keyboard dock driver
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.d/01KeyboardDock:system/etc/init.d/01KeyboardDock
-
 # Packages
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -104,8 +94,7 @@ PRODUCT_PACKAGES += \
     power.piranha \
     sensors.piranha \
     geomagneticd \
-    orientationd \
-    libsecril-client
+    orientationd
 
 # F2FS filesystem
 PRODUCT_PACKAGES += \
