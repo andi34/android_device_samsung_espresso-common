@@ -23,7 +23,7 @@ TARGET_BOARD_OMAP_CPU := 4430
 $(call inherit-product, hardware/ti/omap4/omap4.mk)
 
 # Include Slim specific additions
-$(call inherit-product, device/samsung/espressowifi/device-slim.mk)
+$(call inherit-product, device/samsung/espresso-common/device-slim.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay/aosp-common
