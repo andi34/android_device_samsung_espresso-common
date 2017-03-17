@@ -26,18 +26,21 @@ TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
 PRODUCT_COPY_FILES := \
 	$(TARGET_PREBUILT_KERNEL):kernel
 
-# Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.espresso \
-    init.espresso.usb.rc \
-    init.espresso.rc \
-    ueventd.espresso.rc
+# Init files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/init.espresso.rc:root/init.espresso.rc \
+    $(LOCAL_PATH)/rootdir/init.espresso.usb.rc:root/init.espresso.usb.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.espresso.rc:root/ueventd.espresso.rc
+
+# Fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/fstab.espresso:root/fstab.espresso
 
 # Recovery Ramdisk
 PRODUCT_PACKAGES += \
-    init.recovery.espresso.rc \
-    init.recovery.usb.rc \
-    twrp.fstab
+    $(LOCAL_PATH)/recovery/root/init.recovery.espresso.rc:recovery/root/init.recovery.espresso.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc \
+    $(LOCAL_PATH)/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Charger
 PRODUCT_PACKAGES += \

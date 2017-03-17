@@ -1,4 +1,4 @@
-import /init.${ro.hardware}.usb.rc
+import /init.espresso.usb.rc
 
 on init
     symlink /sdcard /mnt/sdcard
