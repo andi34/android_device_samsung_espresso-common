@@ -56,6 +56,7 @@ PRODUCT_PACKAGES += \
 # Kernel Modules
 PRODUCT_PACKAGES += \
     bcmdhd.ko \
+    pvrsrvkm.ko \
     pvrsrvkm_sgx540_120.ko
 
 PRODUCT_PROPERTY_OVERRIDES += \
