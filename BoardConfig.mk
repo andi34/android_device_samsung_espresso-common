@@ -67,7 +67,6 @@ BOARD_SEPOLICY_DIRS += hardware/ti/omap4/sepolicy
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
-BOARD_SUPPRESS_EMMC_WIPE := true
 TARGET_RECOVERY_FSTAB := $(ESPRESSO_FOLDER)/rootdir/fstab.espresso
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_DEVICE_DIRS += $(ESPRESSO_FOLDER)
