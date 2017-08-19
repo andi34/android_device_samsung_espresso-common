@@ -70,7 +70,7 @@ BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
 TARGET_RECOVERY_FSTAB := $(ESPRESSO_FOLDER)/rootdir/fstab.espresso
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_DEVICE_DIRS += $(ESPRESSO_FOLDER)
-BOARD_CUSTOM_BOOTIMG_MK := $(ESPRESSO_FOLDER)/custombootimg.mk
+LZMA_RAMDISK_TARGETS := recovery
 
 # TWRP
 TW_THEME := landscape_hdpi
