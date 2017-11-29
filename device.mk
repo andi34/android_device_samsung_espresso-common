@@ -21,26 +21,21 @@ LOCAL_PATH := device/samsung/espressocommon
 PRODUCT_AAPT_CONFIG := large
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
-
-PRODUCT_COPY_FILES := \
-	$(TARGET_PREBUILT_KERNEL):kernel
-
 # Init files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/init.espresso.rc:root/init.espresso.rc \
-    $(LOCAL_PATH)/rootdir/init.espresso.usb.rc:root/init.espresso.usb.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.espresso.rc:root/ueventd.espresso.rc
+    device/samsung/espressowifi/rootdir/init.espresso.rc:root/init.espresso.rc \
+    device/samsung/espressowifi/rootdir/init.espresso.usb.rc:root/init.espresso.usb.rc \
+    device/samsung/espressowifi/rootdir/ueventd.espresso.rc:root/ueventd.espresso.rc
 
 # Fstab
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.espresso:root/fstab.espresso
+    device/samsung/espressowifi/rootdir/fstab.espresso:root/fstab.espresso
 
 # Recovery Ramdisk
 PRODUCT_PACKAGES += \
-    $(LOCAL_PATH)/recovery/root/init.recovery.espresso.rc:recovery/root/init.recovery.espresso.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc \
-    $(LOCAL_PATH)/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/samsung/espressowifi/recovery/root/init.recovery.espresso.rc:recovery/root/init.recovery.espresso.rc \
+    device/samsung/espressowifi/recovery/root/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc \
+    device/samsung/espressowifi/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -52,12 +47,6 @@ PRODUCT_PACKAGES += \
     fsck.f2fs \
     fibmap.f2fs \
     f2fstat
-
-# Kernel Modules
-PRODUCT_PACKAGES += \
-    bcmdhd.ko \
-    pvrsrvkm.ko \
-    pvrsrvkm_sgx540_120.ko
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \

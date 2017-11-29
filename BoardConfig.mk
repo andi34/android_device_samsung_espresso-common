@@ -18,8 +18,6 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
-ESPRESSO_FOLDER := device/samsung/espressocommon
-
 TARGET_NO_BOOTLOADER := true
 
 # Processor
@@ -35,6 +33,9 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 
 TARGET_BOOTLOADER_BOARD_NAME := piranha
 
+# Inline kernel building
+TARGET_KERNEL_SOURCE := kernel/ti/omap4
+TARGET_KERNEL_CONFIG := espresso_defconfig
 BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 2048
@@ -61,15 +62,16 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/
 BOARD_USES_SECURE_SERVICES := true
 
 # Selinux
-BOARD_SEPOLICY_DIRS += $(ESPRESSO_FOLDER)/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/espressowifi/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/espresso3g/sepolicy
 BOARD_SEPOLICY_DIRS += hardware/ti/omap4/sepolicy
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
-TARGET_RECOVERY_FSTAB := $(ESPRESSO_FOLDER)/rootdir/fstab.espresso
+TARGET_RECOVERY_FSTAB := device/samsung/espressowifi/rootdir/fstab.espresso
 RECOVERY_FSTAB_VERSION := 2
-TARGET_RECOVERY_DEVICE_DIRS += $(ESPRESSO_FOLDER)
+TARGET_RECOVERY_DEVICE_DIRS += device/samsung/espressowifi
 LZMA_RAMDISK_TARGETS := recovery
 
 # TWRP
