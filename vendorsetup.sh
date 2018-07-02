@@ -1,1 +1,1 @@
-add_lunch_combo omni_espressocommon-userdebug
+add_lunch_combo omni_p5100-userdebug

@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_espressocommon.mk
+    $(LOCAL_DIR)/omni_p5100.mk
