@@ -21,6 +21,4 @@
 include device/samsung/espressocommon/BoardConfigCommon.mk
 
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/ti/omap4
-TARGET_KERNEL_CONFIG := espresso_defconfig
 VARIANT_DEFCONFIG := p3100_defconfig
