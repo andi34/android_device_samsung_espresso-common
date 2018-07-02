@@ -33,7 +33,13 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 
 TARGET_BOOTLOADER_BOARD_NAME := piranha
 
+# Kernel Toolchain
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := "$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(strip $(HOST_OS))-x86/arm/arm-eabi-4.7/bin"
+
 # Inline kernel building
+TARGET_KERNEL_SOURCE := kernel/ti/omap4
+TARGET_KERNEL_CONFIG := espresso_recovery_defconfig
 BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_PAGESIZE := 2048
