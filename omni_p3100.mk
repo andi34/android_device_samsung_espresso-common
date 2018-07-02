@@ -27,12 +27,17 @@ $(call inherit-product, device/samsung/espressocommon/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_espressocommon
-PRODUCT_DEVICE := espressocommon
+PRODUCT_DEVICE := p3100
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := Galaxy Tab 2
+PRODUCT_MODEL := GT-P3100
 PRODUCT_MANUFACTURER := Samsung
 
-TARGET_OTA_ASSERT_DEVICE := espresso-common,p3100,GT-P3100,espressorf,espressorfxx,p3110,GT-P3110,p3113,GT-P3113,espressowifi,espressowifixx,p5100,GT-P5100,espresso10rf,espresso10rfxx,p5110,GT-P5110,p5113,GT-P5113,espresso10wifi,espresso10wifixx
+# Device identifier. This must come after all inclusions
+PRODUCT_NAME := omni_p3100
 
+# Set build fingerprint / ID / Product Name etc.
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE="espresso-common"
+    PRIVATE_BUILD_DESC="espressorfxx-user 4.2.2 JDQ39 P3100XWDNA1 release-keys" \
+    BUILD_FINGERPRINT="samsung/espressorfxx/espressorf:4.2.2/JDQ39/P3100XWDNA1:user/release-keys"
+
+TARGET_OTA_ASSERT_DEVICE := espresso-common,p3100,GT-P3100,espressorf,espressorfxx,p3110,GT-P3110,p3113,GT-P3113,espressowifi,espressowifixx,p5100,GT-P5100,espresso10rf,espresso10rfxx,p5110,GT-P5110,p5113,GT-P5113,espresso10wifi,espresso10wifixx
