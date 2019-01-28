@@ -68,7 +68,7 @@ BOARD_USES_SECURE_SERVICES := true
 # Selinux
 BOARD_SEPOLICY_DIRS += device/samsung/espressowifi/sepolicy
 BOARD_SEPOLICY_DIRS += device/samsung/espresso3g/sepolicy
-BOARD_SEPOLICY_DIRS += hardware/ti/omap4/sepolicy
+include hardware/ti/omap4/sepolicy/sepolicy.mk
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
